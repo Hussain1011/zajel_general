@@ -1,23 +1,33 @@
-frappe.query_reports["Profit and Loss Tabrah"] = {
-	filters: [
-		{
-			fieldname: "from_date",
-			label: __("From Date"),
-			fieldtype: "Date",
-			default: frappe.datetime.add_months(frappe.datetime.get_today(), -1)
-		},
-		{
-			fieldname: "to_date",
-			label: __("To Date"),
-			fieldtype: "Date",
-			default: frappe.datetime.get_today()
-		},
-		{
-			fieldname: "company",
-			label: __("Company"),
-			fieldtype: "Link",
-			options: "Company",
-			default: frappe.defaults.get_user_default("Company")
-		}
-	]	
-};
+// Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
+// License: GNU General Public License v3. See license.txt
+
+frappe.query_reports["Profit and Loss Tabrah"] = $.extend({}, erpnext.financial_statements);
+
+erpnext.utils.add_dimensions("Profit and Loss Tabrah", 10);
+
+frappe.query_reports["Profit and Loss Tabrah"]["filters"].push({
+	fieldname: "selected_view",
+	label: __("Select View"),
+	fieldtype: "Select",
+	options: [
+		{ value: "Report", label: __("Report View") },
+		{ value: "Growth", label: __("Growth View") },
+		{ value: "Margin", label: __("Margin View") },
+	],
+	default: "Report",
+	reqd: 1,
+});
+
+frappe.query_reports["Profit and Loss Tabrah"]["filters"].push({
+	fieldname: "accumulated_values",
+	label: __("Accumulated Values"),
+	fieldtype: "Check",
+	default: 1,
+});
+
+frappe.query_reports["Profit and Loss Tabrah"]["filters"].push({
+	fieldname: "include_default_book_entries",
+	label: __("Include Default FB Entries"),
+	fieldtype: "Check",
+	default: 1,
+});
