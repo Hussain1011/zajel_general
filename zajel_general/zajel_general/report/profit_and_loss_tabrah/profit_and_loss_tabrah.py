@@ -77,12 +77,22 @@ def execute(filters=None):
 	# Assign ratio value for each row
 	for row in data:
 		parent = row.get("parent_account")
-		if parent and parent in parent_map:
+		if parent:
+			total_ratio = []
 			for period in period_list:
 				key = period.key
-				if flt(parent_map[parent]):
-					percent = flt(row.get(key)) / parent_map[parent] * 100
-					row.setdefault("ratio", {})[key] = f"{percent:.2f}%"
+				val = flt(row.get(key))
+				parent_total = parent_map.get((parent))
+				if parent_total and val:
+					percent = val / parent_total * 100
+					total_ratio.append(percent)
+			if total_ratio:
+				# Use average percentage across periods if more than one
+				row["ratio"] = f"{sum(total_ratio)/len(total_ratio):.2f}%"
+			else:
+				row["ratio"] = ""
+		else:
+			row["ratio"] = ""
 
 	currency = filters.presentation_currency or frappe.get_cached_value(
 		"Company", filters.company, "default_currency"
