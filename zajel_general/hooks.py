@@ -153,13 +153,13 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"zajel_general.tasks.all"
 # 	],
-# 	"daily": [
-# 		"zajel_general.tasks.daily"
-# 	],
+	"daily": [
+		"zajel_general.tasks.expire_old_signatures",
+	],
 # 	"hourly": [
 # 		"zajel_general.tasks.hourly"
 # 	],
@@ -169,7 +169,7 @@ doc_events = {
 # 	"monthly": [
 # 		"zajel_general.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------
