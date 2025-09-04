@@ -35,7 +35,24 @@ def apply_annual_leave_deduction(doc, method=None):
         _remove_annual_leave_deduction_row(doc)
         _write_helpers(doc, custom_annual_leave_days=0.0, custom_non_allowed_monthly=0.0)
         return
-
+    
+    if not custom_annual_leave_days:
+    # fallback: compute from approved Leave Applications
+        apps = frappe.get_all(
+            "Leave Application",
+            filters={
+                "employee": doc.employee,
+                "status": "Approved",
+                "leave_type": ANNUAL_LEAVE_TYPE,
+                "from_date": ("<=", doc.end_date),
+                "to_date": (">=", doc.start_date),
+            },
+        fields=["from_date","to_date","total_leave_days"]
+        )
+        # You can do overlap math; simplest is sum total_leave_days of overlaps
+        for a in apps:
+            custom_annual_leave_days += flt(a.total_leave_days)
+        doc.custom_annual_leave_days = custom_annual_leave_days
     # 2) Sum earnings that are NOT allowed during Annual Leave
     custom_non_allowed_monthly = 0.0
     for er in (doc.get("earnings") or []):
