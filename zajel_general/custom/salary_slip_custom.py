@@ -51,13 +51,13 @@ def apply_annual_leave_deduction(doc, method=None):
     # 5) Upsert the deduction row
     row = None
     for d in (doc.get("deductions") or []):
-        if (d.salary_component or "").strip().lower() == DED_COMP.lower():
+        if (d.salary_component or "").strip().lower() == DEDUCTION_COMPONENT.lower():
             row = d
             break
 
     if not row:
         row = doc.append("deductions", {})
-        row.salary_component = DED_COMP
+        row.salary_component = DEDUCTION_COMPONENT
 
     row.amount = amount
 
@@ -107,5 +107,5 @@ def get_custom_annual_leave_days_from_leave_applications(employee, start_date, e
 def zero_or_remove_deduction_row(doc):
     """Optional helper to clear the deduction if no annual leave found."""
     for d in (doc.get("deductions") or []):
-        if (d.salary_component or "").strip().lower() == DED_COMP.lower():
+        if (d.salary_component or "").strip().lower() == DEDUCTION_COMPONENT.lower():
             d.amount = 0.0
