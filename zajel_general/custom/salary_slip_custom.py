@@ -2,7 +2,7 @@ import frappe
 from frappe.utils import flt, getdate
 
 # 1) Keep these exactly as your *labels*, but we normalize to lower-case once.
-ALLOWED_EARNINGS = {s.lower() for s in ["Basic Salary", "Housing Allowance"]}   # fully paid during annual leave
+ALLOWED_EARNINGS = {s.lower() for s in ["Basic Salary", "Housing Allowance", "Sales Commission", "Arrear", "Reimbursement", "Advance Salary Paid", "Overtime", "Sales Tips", "Bonus", "Leave Encashment"]}   # fully paid during annual leave
 ANNUAL_LEAVE_TYPE = "Annual Leave"                                              # exact Leave Type name
 DEDUCTION_COMPONENT = "Annual Leave"                                            # existing Deduction-type Salary Component
 
