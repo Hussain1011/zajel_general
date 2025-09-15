@@ -72,12 +72,10 @@
    "read_only": 1
   },
   {
-   "default": "alialkuwari@tabrah-holding.com",
    "fieldname": "approval_request",
    "fieldtype": "Link",
    "label": "Approval Request",
-   "options": "User",
-   "read_only": 1
+   "options": "User"
   },
   {
    "fieldname": "employee",
@@ -99,14 +97,14 @@
    "fieldname": "certificate_type",
    "fieldtype": "Select",
    "label": "Certificate Type",
-   "options": "\nEmployment Certificate\nExperience Letter\nSalary Certificate\nSalary Certificate CBQ\nSalary Certificate CBQ Card\nSalary Certificate QDC\nTermination Letter\nOffer Letter"
+   "options": "\nEmployment Certificate\nExperience Letter\nSalary Certificate\nSalary Certificate CBQ\nSalary Certificate CBQ Card\nSalary Certificate QDC\nTermination Letter\nOffer Letter\nNon Confirmation Letter\nConfirmation Letter"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-15 12:44:08.154620",
+ "modified": "2025-09-15 18:48:44.893671",
  "modified_by": "Administrator",
  "module": "Zajel General",
  "name": "Certificate Request",

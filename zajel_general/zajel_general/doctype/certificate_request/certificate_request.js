@@ -1,6 +1,16 @@
 // your_app/doctype/certificate_request/certificate_request.js
 frappe.ui.form.on('Certificate Request', {
-    refresh(frm) {
+    setup: function (frm) {
+
+      // frm.set_query("approval_request", function() {
+      //   return {
+      //     // filters:{
+      //     //   name : "hr-user@demo.com",
+      //     // },
+      //     filters: [["Has Role", "role", "=", "System Manager"]],
+      //   };
+      // });
+      
       // if (frm.doc.name && !frm.is_new()) {
       //   frm.add_custom_button(__('Print Certificate'), () => {
       //     const vt = frm.doc.valid_till;
@@ -20,5 +30,5 @@ frappe.ui.form.on('Certificate Request', {
       //     });
       //   });
       // }
-    }
+    },
   });
