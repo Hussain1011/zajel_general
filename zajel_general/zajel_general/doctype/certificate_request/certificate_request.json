@@ -6,26 +6,17 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "employee",
-  "certificate_type",
   "approved_by",
   "show_signature",
   "status",
   "column_break_oddf",
+  "approval_request",
   "employee_name",
   "company",
   "approved_on",
-  "valid_till",
-  "amended_from"
+  "valid_till"
  ],
  "fields": [
-  {
-   "fieldname": "employee",
-   "fieldtype": "Link",
-   "label": "Employee",
-   "options": "Employee",
-   "unique": 1
-  },
   {
    "fieldname": "company",
    "fieldtype": "Link",
@@ -50,12 +41,6 @@
   {
    "fieldname": "column_break_oddf",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "certificate_type",
-   "fieldtype": "Select",
-   "label": "Certificate Type`",
-   "options": "\nEmployment Certificate\nExperience Letter\nSalary Certificate\nSalary Certificate CBQ\nSalary Certificate CBQ Card\nSalary Certificate QDC\nTermination Letter\nOffer Letter"
   },
   {
    "fieldname": "status",
@@ -84,21 +69,19 @@
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
+   "default": "alialkuwari@tabrah-holding.com",
+   "fieldname": "approval_request",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Certificate Request",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "label": "Approval Request",
+   "options": "User",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-03 17:47:06.865940",
+ "modified": "2025-09-15 12:24:03.083327",
  "modified_by": "Administrator",
  "module": "Zajel General",
  "name": "Certificate Request",
