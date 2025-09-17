@@ -143,9 +143,9 @@ doc_events = {
     "Purchase Order": {
         "validate": "zajel_general.custom.purchase_order_custom.validate"
     },
-    "Salary Slip": {
-        "validate": "zajel_general.custom.salary_slip_custom.apply_annual_leave_deduction"
-    },
+    # "Salary Slip": {
+    #     "validate": "zajel_general.custom.salary_slip_custom.apply_annual_leave_deduction"
+    # },
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
