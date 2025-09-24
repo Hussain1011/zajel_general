@@ -26,11 +26,15 @@ def validate(doc, method):
             pluck="supplier"
         )
 
+        if doc.doctype == 'Material Request':
+            supplier = doc.custom_supplier
+        else:
+            supplier = doc.supplier
         # if no suppliers are set, allow all
-        if allowed_suppliers and doc.supplier not in allowed_suppliers:
+        if allowed_suppliers and supplier not in allowed_suppliers:
             frappe.throw(
                 _("Row #{0}: Supplier {1} is not allowed for Item {2}. Allowed suppliers: {3}").format(
-                    row.idx, doc.supplier, row.item_code, ", ".join(allowed_suppliers)
+                    row.idx, supplier, row.item_code, ", ".join(allowed_suppliers)
                 )
             )
         
