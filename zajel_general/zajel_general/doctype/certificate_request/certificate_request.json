@@ -17,6 +17,7 @@
   "company",
   "approved_on",
   "valid_till",
+  "letter_head",
   "amended_from"
  ],
  "fields": [
@@ -98,13 +99,18 @@
    "fieldtype": "Select",
    "label": "Certificate Type",
    "options": "\nEmployment Certificate\nExperience Letter\nSalary Certificate\nSalary Certificate CBQ\nSalary Certificate CBQ Card\nSalary Certificate QDC\nTermination Letter\nOffer Letter\nNon Confirmation Letter\nConfirmation Letter"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Data",
+   "label": "Letter Head"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-15 18:48:44.893671",
+ "modified": "2025-10-05 20:18:27.958082",
  "modified_by": "Administrator",
  "module": "Zajel General",
  "name": "Certificate Request",

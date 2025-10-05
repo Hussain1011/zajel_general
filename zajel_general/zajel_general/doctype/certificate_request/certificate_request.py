@@ -15,6 +15,24 @@ class CertificateRequest(Document):
         # Ensure default validity
         # if not self.validity_days:
         validity_days = 10
+        
+        """Auto-assign letterhead based on selected company in custom doctype"""
+
+        # Skip if letter_head is already set manually
+        if getattr(self, "letter_head", None):
+            return
+
+        # Ensure company exists
+        if not getattr(self, "company", None):
+            return
+
+        # Fetch default letterhead for that company
+        default_letterhead = frappe.db.get_value("Company", self.company, "default_letter_head")
+
+        if default_letterhead:
+            self.letter_head = default_letterhead
+        else:
+            frappe.logger().info(f"No default letterhead found for {self.company}")
 
         if self.status == "Approved":
             # Stamp approver/time once
