@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-30 19:32:13.079997",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "item_group",
+  "qty",
+  "uom",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qty"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Item Group",
+   "options": "Item Group"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-05 13:49:43.256833",
+ "modified_by": "Administrator",
+ "module": "Zajel General",
+ "name": "Kitchen Order Ticket Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
