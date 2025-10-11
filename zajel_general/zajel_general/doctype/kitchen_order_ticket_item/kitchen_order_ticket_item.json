@@ -11,7 +11,8 @@
   "item_group",
   "qty",
   "uom",
-  "remarks"
+  "remarks",
+  "item_status"
  ],
  "fields": [
   {
@@ -52,13 +53,19 @@
    "fieldtype": "Link",
    "label": "Item Group",
    "options": "Item Group"
+  },
+  {
+   "fieldname": "item_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\ntodo\ninprogress\ncompleted\ndelivered"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-10-05 13:49:43.256833",
+ "modified": "2025-10-07 17:13:40.849104",
  "modified_by": "Administrator",
  "module": "Zajel General",
  "name": "Kitchen Order Ticket Item",
