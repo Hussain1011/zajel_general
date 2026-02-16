@@ -9,13 +9,16 @@
   "reason_code",
   "description",
   "column_break_nncd",
-  "reason_name"
+  "reason_name",
+  "account"
  ],
  "fields": [
   {
    "fieldname": "reason_code",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Reason Code",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -30,13 +33,23 @@
   {
    "fieldname": "reason_name",
    "fieldtype": "Data",
-   "label": "Reason Name"
+   "in_list_view": 1,
+   "label": "Reason Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account",
+   "options": "Account",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-22 18:56:19.644209",
+ "modified": "2026-02-16 17:18:53.639000",
  "modified_by": "Administrator",
  "module": "Zajel General",
  "name": "Reason",
