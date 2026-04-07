@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/zajel_general/css/zajel_general.css"
-# app_include_js = "/assets/zajel_general/js/zajel_general.js"
+# app_include_js = "/assets/zajel_general/js/entity-dashboard.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/zajel_general/css/zajel_general.css"
